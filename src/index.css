@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  width: 100vw;
+  height: 100vh;
+}
+
+.ant-layout-header {
+  height: 15vh;
+}
+
+.ant-layout-content {
+  padding: 20px;
+  height: 70vh;
+}
+
+.ant-layout-footer {
+  height: 20vh;
+}
