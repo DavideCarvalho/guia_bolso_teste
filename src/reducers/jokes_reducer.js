@@ -6,9 +6,14 @@ const INITIAL_STATE = {
 }
 
 const setJokesCategories = (state = INITIAL_STATE, { type, payload }) => {
-  return {...state, categories: [
-    ...state.categories, state.categories = payload
-  ]};
+  payload = payload ? payload : [];
+  if (typeof payload === 'string' ) {
+    const newPayload = [
+      payload
+    ]
+    payload = {...newPayload}
+  }
+  return {...state, categories: payload};
 }
 
 const HANDLERS = {

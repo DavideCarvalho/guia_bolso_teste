@@ -1,0 +1,189 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Categories List Component should render 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <CategoriesList
+    fetchJokesCategories={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <Col
+          span={6}
+>
+          Category 1
+</Col>,
+        <Col
+          span={6}
+>
+          Category 2
+</Col>,
+        <Col
+          span={6}
+>
+          Category 3
+</Col>,
+        <Col
+          span={6}
+>
+          Category 4
+</Col>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": "Category 1",
+          "span": 6,
+        },
+        "ref": null,
+        "rendered": "Category 1",
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": "Category 2",
+          "span": 6,
+        },
+        "ref": null,
+        "rendered": "Category 2",
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": "Category 3",
+          "span": 6,
+        },
+        "ref": null,
+        "rendered": "Category 3",
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": "Category 4",
+          "span": 6,
+        },
+        "ref": null,
+        "rendered": "Category 4",
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Col
+            span={6}
+>
+            Category 1
+</Col>,
+          <Col
+            span={6}
+>
+            Category 2
+</Col>,
+          <Col
+            span={6}
+>
+            Category 3
+</Col>,
+          <Col
+            span={6}
+>
+            Category 4
+</Col>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": "Category 1",
+            "span": 6,
+          },
+          "ref": null,
+          "rendered": "Category 1",
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": "Category 2",
+            "span": 6,
+          },
+          "ref": null,
+          "rendered": "Category 2",
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": "Category 3",
+            "span": 6,
+          },
+          "ref": null,
+          "rendered": "Category 3",
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": "Category 4",
+            "span": 6,
+          },
+          "ref": null,
+          "rendered": "Category 4",
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
