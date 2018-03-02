@@ -11,9 +11,15 @@ import reducers from './reducers';
 import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-const store = createStore(reducers, composeWithDevTools(
-  applyMiddleware(thunk, logger, promise),
-));
+const store = createStore(
+  reducers,
+  composeWithDevTools(applyMiddleware(thunk, logger, promise))
+);
 
-ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+);
 registerServiceWorker();

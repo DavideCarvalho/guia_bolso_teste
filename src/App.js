@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
 import { Layout, Row, Col } from 'antd';
 import './App.css';
+import CategoriesList from './connections/connected_categories_list';
 const { Header, Content, Footer } = Layout;
 
 class App extends Component {
+ 
+  componentWillMount() {
+    //call action to do a request to the api to get the categories
+  }
+
   render() {
     return (
       <div className="App">
@@ -14,10 +20,7 @@ class App extends Component {
               <Col span={4} />
               <Col span={16}>
                 <Row>
-                  <Col span={6}>Category 1</Col>
-                  <Col span={6}>Category 2</Col>
-                  <Col span={6}>Category 3</Col>
-                  <Col span={6}>Category 4</Col>
+                  <CategoriesList />
                 </Row>
               </Col>
             </Row>
