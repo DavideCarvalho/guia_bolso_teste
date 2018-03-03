@@ -10,9 +10,16 @@ describe('Categories List Component', () => {
   it('should render', () => {
     const props = {}
     props.fetchJokesCategories = jest.fn();
-    props.jokes = {}
-    props.jokes.categories = []
-    props.jokes.selectedJoke.category = '';
+    props.jokes = {
+      categories: [],
+      selectedJoke: {
+        category: '',
+        icon_url: '',
+        id: '',
+        url: '',
+        value: ''
+      }
+    }
     const component = shallow(<CategoriesList {...props} />);
     expect(component).toMatchSnapshot();
   })

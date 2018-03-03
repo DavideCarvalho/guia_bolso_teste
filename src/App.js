@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { Layout, Row, Col } from 'antd';
-import './App.css';
+import { Loader } from 'react-overlay-loader';
 import CategoriesList from './connections/connected_categories_list';
+import './App.css';
+import 'react-overlay-loader/styles.css';
 const { Header, Content, Footer } = Layout;
 
 class App extends Component {
- 
+
   componentWillMount() {
     //call action to do a request to the api to get the categories
   }

@@ -5,12 +5,17 @@ const chuckNorrisApi = "https://api.chucknorris.io";
 
 export const FETCH_JOKES_CATEGORIES = "FETCH_JOKES_CATEGORIES";
 export const fetchJokesCategories = () => async dispatch => {
-  const requestData = await axios.get(`${chuckNorrisApi}/jokes/categories`);
-  const { data } = requestData;
-  dispatch({
-    type: FETCH_JOKES_CATEGORIES,
-    payload: data
-  });
+  try {
+    const requestData = await axios.get(`${chuckNorrisApi}/jokes/categories`);
+    const { data } = requestData;
+    dispatch({
+      type: FETCH_JOKES_CATEGORIES,
+      payload: data
+    });
+    return Promise.resolve(true)
+  } catch (e) {
+    return Promise.reject(e);
+  }
 };
 
 export const SELECT_JOKE_CATEGORY = "SELECT_JOKE_CATEGORY";
