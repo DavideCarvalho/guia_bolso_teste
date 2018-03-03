@@ -2,7 +2,14 @@ import { JokesActionTypes } from '../actions/jokes';
 import { createReducer } from 'reduxsauce';
 
 const INITIAL_STATE = {
-  categories: []
+  categories: [],
+  selectedJoke: {
+    category: '',
+    icon_url: '',
+    id: '',
+    url: '',
+    value: ''
+  }
 }
 
 const setJokesCategories = (state = INITIAL_STATE, { type, payload }) => {
@@ -16,8 +23,14 @@ const setJokesCategories = (state = INITIAL_STATE, { type, payload }) => {
   return {...state, categories: payload};
 }
 
+const selectJokeCategory = (state = INITIAL_STATE, { type, payload }) => {
+  console.log(payload)
+  return {...state, selectedJoke: payload}
+}
+
 const HANDLERS = {
-  [JokesActionTypes.FETCH_JOKES_CATEGORIES]: setJokesCategories
+  [JokesActionTypes.FETCH_JOKES_CATEGORIES]: setJokesCategories,
+  [JokesActionTypes.SELECT_JOKE_CATEGORY]: selectJokeCategory
 }
 
 export default createReducer(INITIAL_STATE, HANDLERS);

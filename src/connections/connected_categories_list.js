@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import CategoriesList from '../components/categories_list';
 import Creators from '../actions/jokes.js';
-const { fetchJokesCategories } = Creators;
+const { fetchJokesCategories, selectJokeCategory } = Creators;
 
 const mapStateToProps = (state) => {
   return {
@@ -9,4 +9,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { fetchJokesCategories })(CategoriesList);
+export default connect(mapStateToProps, { fetchJokesCategories, selectJokeCategory })(CategoriesList);
