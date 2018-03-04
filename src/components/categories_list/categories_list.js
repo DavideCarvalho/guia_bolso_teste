@@ -1,6 +1,6 @@
 // @flow
 import React, { Component } from 'react';
-import { Col, Modal } from 'antd';
+import { Modal, Row } from 'antd';
 import { Loader } from 'react-overlay-loader';
 import Category from '../category';
 import swal from 'sweetalert2';
@@ -27,7 +27,10 @@ type CategoriesListStateType = {
   isLoadableActive: boolean
 };
 
-export default class CategoriesList extends Component<CategoriesListPropsType, CategoriesListStateType> {
+export default class CategoriesList extends Component<
+  CategoriesListPropsType,
+  CategoriesListStateType
+> {
   constructor(props: CategoriesListPropsType) {
     super(props);
     this.state = {
@@ -39,29 +42,28 @@ export default class CategoriesList extends Component<CategoriesListPropsType, C
   async componentWillMount() {
     this.setState({
       isLoadableActive: true
-    })
+    });
     try {
       await this.props.fetchJokesCategories();
     } catch (e) {
       swal({
         type: 'error',
         title: 'Oops...',
-        text: 'Não foi possível buscar pelas categorias de piadas',
+        text: 'Não foi possível buscar pelas categorias de piadas'
       });
     } finally {
       this.setState({
         isLoadableActive: false
-      })
+      });
     }
   }
 
-  async selectCategoryAndshowModal (e: Object) {
-    console.log(e)
-    console.log(this.setState);
+  async selectCategoryAndshowModal(e: Object) {
+    console.log(e);
     try {
       this.setState({
         isLoadableActive: true
-      })
+      });
       await this.props.selectJokeCategory(e.currentTarget.textContent);
       this.setState({
         visible: true
@@ -70,7 +72,7 @@ export default class CategoriesList extends Component<CategoriesListPropsType, C
       swal({
         type: 'error',
         title: 'Oops...',
-        text: 'Não foi possível buscar por uma piada',
+        text: 'Não foi possível buscar por uma piada'
       });
     } finally {
       this.setState({
@@ -94,9 +96,13 @@ export default class CategoriesList extends Component<CategoriesListPropsType, C
 
   render() {
     return (
-      <div>
+      <Row gutter={16}>
         {this.props.jokes.categories.map((categoryName, index) => (
-          <Category key={index} categoryName={categoryName} selectCategoryAndshowModal={this.selectCategoryAndshowModal} />
+          <Category
+            key={index}
+            categoryName={categoryName}
+            selectCategoryAndshowModal={e => this.selectCategoryAndshowModal(e)}
+          />
         ))}
         <Modal
           title={`Chuck Norris ${this.props.jokes.selectedJoke.category} jokes`}
@@ -107,7 +113,7 @@ export default class CategoriesList extends Component<CategoriesListPropsType, C
           <p>{this.props.jokes.selectedJoke.value}</p>
         </Modal>
         <Loader fullPage loading={this.state.isLoadableActive} />
-      </div>
+      </Row>
     );
   }
 }

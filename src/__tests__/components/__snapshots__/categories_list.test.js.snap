@@ -6,6 +6,18 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <CategoriesList
     fetchJokesCategories={[Function]}
+    jokes={
+        Object {
+            "categories": Array [],
+            "selectedJoke": Object {
+              "category": "",
+              "icon_url": "",
+              "id": "",
+              "url": "",
+              "value": "",
+            },
+          }
+    }
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -20,26 +32,25 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <Col
-          span={6}
+        Array [],
+        <Modal
+          confirmLoading={false}
+          maskTransitionName="fade"
+          okType="primary"
+          onCancel={[Function]}
+          onOk={[Function]}
+          prefixCls="ant-modal"
+          title="Chuck Norris  jokes"
+          transitionName="zoom"
+          visible={false}
+          width={520}
 >
-          Category 1
-</Col>,
-        <Col
-          span={6}
->
-          Category 2
-</Col>,
-        <Col
-          span={6}
->
-          Category 3
-</Col>,
-        <Col
-          span={6}
->
-          Category 4
-</Col>,
+          <p />
+</Modal>,
+        <Loader
+          fullPage={true}
+          loading={true}
+/>,
       ],
     },
     "ref": null,
@@ -49,47 +60,42 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "children": "Category 1",
-          "span": 6,
+          "children": <p />,
+          "confirmLoading": false,
+          "maskTransitionName": "fade",
+          "okType": "primary",
+          "onCancel": [Function],
+          "onOk": [Function],
+          "prefixCls": "ant-modal",
+          "title": "Chuck Norris  jokes",
+          "transitionName": "zoom",
+          "visible": false,
+          "width": 520,
         },
         "ref": null,
-        "rendered": "Category 1",
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "",
+          },
+          "ref": null,
+          "rendered": "",
+          "type": "p",
+        },
         "type": [Function],
       },
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "class",
+        "nodeType": "function",
         "props": Object {
-          "children": "Category 2",
-          "span": 6,
+          "fullPage": true,
+          "loading": true,
         },
         "ref": null,
-        "rendered": "Category 2",
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "children": "Category 3",
-          "span": 6,
-        },
-        "ref": null,
-        "rendered": "Category 3",
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "children": "Category 4",
-          "span": 6,
-        },
-        "ref": null,
-        "rendered": "Category 4",
+        "rendered": null,
         "type": [Function],
       },
     ],
@@ -102,26 +108,25 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <Col
-            span={6}
+          Array [],
+          <Modal
+            confirmLoading={false}
+            maskTransitionName="fade"
+            okType="primary"
+            onCancel={[Function]}
+            onOk={[Function]}
+            prefixCls="ant-modal"
+            title="Chuck Norris  jokes"
+            transitionName="zoom"
+            visible={false}
+            width={520}
 >
-            Category 1
-</Col>,
-          <Col
-            span={6}
->
-            Category 2
-</Col>,
-          <Col
-            span={6}
->
-            Category 3
-</Col>,
-          <Col
-            span={6}
->
-            Category 4
-</Col>,
+            <p />
+</Modal>,
+          <Loader
+            fullPage={true}
+            loading={true}
+/>,
         ],
       },
       "ref": null,
@@ -131,47 +136,42 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "children": "Category 1",
-            "span": 6,
+            "children": <p />,
+            "confirmLoading": false,
+            "maskTransitionName": "fade",
+            "okType": "primary",
+            "onCancel": [Function],
+            "onOk": [Function],
+            "prefixCls": "ant-modal",
+            "title": "Chuck Norris  jokes",
+            "transitionName": "zoom",
+            "visible": false,
+            "width": 520,
           },
           "ref": null,
-          "rendered": "Category 1",
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "",
+            },
+            "ref": null,
+            "rendered": "",
+            "type": "p",
+          },
           "type": [Function],
         },
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "function",
           "props": Object {
-            "children": "Category 2",
-            "span": 6,
+            "fullPage": true,
+            "loading": true,
           },
           "ref": null,
-          "rendered": "Category 2",
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "children": "Category 3",
-            "span": 6,
-          },
-          "ref": null,
-          "rendered": "Category 3",
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "children": "Category 4",
-            "span": 6,
-          },
-          "ref": null,
-          "rendered": "Category 4",
+          "rendered": null,
           "type": [Function],
         },
       ],

@@ -1,37 +1,43 @@
-import React, { Component } from 'react';
-import { Layout, Row, Col } from 'antd';
-import { Loader } from 'react-overlay-loader';
-import CategoriesList from './connections/connected_categories_list';
+import React from 'react';
+import { Layout, Row, Col, Menu } from 'antd';
 import './App.css';
 import 'react-overlay-loader/styles.css';
+import { Link } from 'react-router-dom'
 const { Header, Content, Footer } = Layout;
 
-class App extends Component {
+const paths = {
+  '/': '1',
+  '/categories':'1'
+}
 
-  componentWillMount() {
-    //call action to do a request to the api to get the categories
-  }
-
-  render() {
-    return (
-      <div className="App">
-        <Layout>
-          <Header>Header</Header>
-          <Content>
-            <Row>
-              <Col span={4} />
-              <Col span={16}>
-                <Row>
-                  <CategoriesList />
-                </Row>
-              </Col>
-            </Row>
-          </Content>
-          <Footer>Footer</Footer>
-        </Layout>
-      </div>
-    );
-  }
+const App = (props, context) => {
+  const selectedNav = [paths[window.location.pathname]]
+  return (
+  <div className='App'>
+    <Layout>
+      <Header>
+        <Menu
+          theme='dark'
+          mode='horizontal'
+          selectedKeys={selectedNav}
+          style={{ lineHeight: '64px' }}
+        >
+          <Menu.Item key='1'>Categorias</Menu.Item>
+          <Menu.Item key='2'><Link to="/search">Procurar Piada</Link></Menu.Item>
+        </Menu>
+      </Header>
+      <Content>
+        <Row>
+          <Col span={4} />
+          <Col span={16}>
+            <main>{props.children}</main>
+          </Col>
+        </Row>
+      </Content>
+      <Footer>Footer</Footer>
+    </Layout>
+  </div>
+);
 }
 
 export default App;
