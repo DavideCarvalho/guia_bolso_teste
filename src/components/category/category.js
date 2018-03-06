@@ -5,9 +5,9 @@ const colStyle = {
   height: '120px',
   display: 'flex',
   justifyContent: 'center',
-  alignItems: 'center'
-  fontWeight: 'bolder'
-  color: '#001529'
+  alignItems: 'center',
+  fontWeight: 'bolder',
+  color: '#001529',
   textDecoration: underline
 }
 
