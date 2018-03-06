@@ -2,17 +2,18 @@ import React, { Component } from 'react';
 import { Col } from 'antd';
 
 const colStyle = {
-  height: '120px',
+  height: 'auto',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  fontWeight: 'bolder',
-  color: '#001529',
-  textDecoration: 'underline'
 }
 
 const pStyle = {
-  cursor: 'pointer'
+  cursor: 'pointer',
+  padding: '30px',
+  fontWeight: 'bolder',
+  color: '#001529',
+  textDecoration: 'underline'
 }
 
 export default class Category extends Component {
