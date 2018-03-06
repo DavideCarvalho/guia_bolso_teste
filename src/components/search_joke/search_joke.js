@@ -26,9 +26,10 @@ type CategoriesListPropsType = {
 type SearchJokeType = {
   isLoading: boolean
 }
-
+const isMobile = window.innerWidth <= 500
+const height = isMobile ? 'auto' : '200px';
 const colStyle = {
-  height: 'auto',
+  height: height,
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center'
