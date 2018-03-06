@@ -12,7 +12,7 @@ const pStyle = {
   cursor: 'pointer',
   padding: '30px',
   fontWeight: 'bolder',
-  color: '#001529',
+  color: '#1890ff',
   textDecoration: 'underline'
 }
 
