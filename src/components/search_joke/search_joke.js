@@ -28,7 +28,7 @@ type SearchJokeType = {
 }
 
 const colStyle = {
-  height: '200px',
+  height: 'auto',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center'
