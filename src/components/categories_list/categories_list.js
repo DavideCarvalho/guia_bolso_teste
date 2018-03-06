@@ -4,7 +4,6 @@ import { Modal, Row } from 'antd';
 import { Loader } from 'react-overlay-loader';
 import Category from '../category';
 import swal from 'sweetalert2';
-import './categories_list.css';
 import 'react-overlay-loader/styles.css';
 
 type CategoriesListPropsType = {

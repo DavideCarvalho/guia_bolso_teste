@@ -1,71 +1,86 @@
+// @flow
 import React, { PureComponent } from "react";
-import { Form, Icon, Input, Button, Row } from "antd";
-const FormItem = Form.Item;
+import { Input, Row, Col } from "antd";
+import swal from 'sweetalert2';
+import { Loader } from 'react-overlay-loader';
+import 'react-overlay-loader/styles.css';
+const Search = Input.Search;
 
-const hasErrors = (fieldsError) => {
-  return Object.keys(fieldsError).some(field => fieldsError[field]);
+type CategoriesListPropsType = {
+  inputSearchJoke: (e: string) => mixed,
+  searchJoke: (input: string) => mixed,
+  jokes: {
+    categories: Array<String>,
+    selectedJoke: {
+      category: string,
+      icon_url: string,
+      id: string,
+      url: string,
+      value: string
+    },
+    searchJokeInput: string,
+    jokesSearched: Array<Object>
+  }
+};
+
+type SearchJokeType = {
+  isLoading: boolean
 }
 
-export default class SearchJoke extends PureComponent {
+const colStyle = {
+  height: '200px',
+  border: '1px solid black',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center'
+};
+
+export default class SearchJoke extends PureComponent<CategoriesListPropsType, SearchJokeType> {
+
+  constructor(props: CategoriesListPropsType) {
+    super(props);
+    this.state = {
+      isLoading: false
+    }
+  }
+
+  async submitForm(e: Object, input: string) {
+    e.preventDefault();
+    try {
+      this.setState({
+        isLoading: true
+      })
+      await this.props.searchJoke(input);
+    } catch (e) {
+      swal({
+        type: 'error',
+        title: 'Oops...',
+        text: 'Não foi possível buscar pelas categorias de piadas'
+      });
+    }
+    finally {
+      this.setState({
+        isLoading: false
+      })
+    }
+  }
+
   render() {
-    const {
-      getFieldDecorator,
-      getFieldsError,
-      getFieldError,
-      isFieldTouched
-    } = this.props.form;
-    const userNameError =
-      isFieldTouched("userName") && getFieldError("userName");
-    const passwordError =
-      isFieldTouched("password") && getFieldError("password");
     return (
       <Row gutter={16}>
-        <Form layout="inline" onSubmit={this.handleSubmit}>
-          <FormItem
-            validateStatus={userNameError ? "error" : ""}
-            help={userNameError || ""}
-          >
-            {getFieldDecorator("userName", {
-              rules: [
-                { required: true, message: "Please input your username!" }
-              ]
-            })(
-              <Input
-                prefix={
-                  <Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />
-                }
-                placeholder="Username"
-              />
-            )}
-          </FormItem>
-          <FormItem
-            validateStatus={passwordError ? "error" : ""}
-            help={passwordError || ""}
-          >
-            {getFieldDecorator("password", {
-              rules: [
-                { required: true, message: "Please input your Password!" }
-              ]
-            })(
-              <Input
-                prefix={
-                  <Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />
-                }
-                type="password"
-                placeholder="Password"
-              />
-            )}
-          </FormItem>
-          <FormItem>
-            <Button
-              type="primary"
-              htmlType="submit"
-              disabled={hasErrors(getFieldsError())}
-            >
-              Log in
-            </Button>
-          </FormItem>
-        </Form>
+        <h1>Procurar Piada</h1>
+        <h2>Escreva o texto da piada e tentaremos acha-la para você</h2>
+        <form onSubmit={(e) => this.submitForm(e, this.props.jokes.searchJokeInput)}>
+          <Search value={this.props.jokes.searchJokeInput} placeholder="input search text" enterButton="Search" size="large" onChange={(e) => this.props.inputSearchJoke(e.target.value)} />
+        </form>
+        {this.props.jokes.jokesSearched.map((joke, index) => {
+          return (
+            <Col span={6} key={joke.id} style={colStyle}>
+              <p className="category_div_p">{joke.value}</p>
+            </Col>
+          )
+        })}
+        <Loader fullPage loading={this.state.isLoading} />
       </Row>
     );
   }

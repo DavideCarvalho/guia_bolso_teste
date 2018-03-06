@@ -5,7 +5,7 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import React from "react";
 import App from "./App";
 import CategoryList from "./connections/connected_categories_list";
-import SearchJoke from "./components/search_joke";
+import SearchJoke from "./connections/connected_search_joke";
 import promise from "redux-promise";
 import thunk from "redux-thunk";
 import reducers from "./reducers";

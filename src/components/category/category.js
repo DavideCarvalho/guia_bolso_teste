@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Col } from 'antd';
-import './category.css';
 
 const colStyle = {
   height: '120px',
@@ -18,7 +17,7 @@ export default class Category extends Component {
   render () {
     return (
       <Col span={6} style={colStyle}>
-        <p onClick={(e) => this.props.selectCategoryAndshowModal(e)} style={pStyle}>{this.props.categoryName}</p>
+        <p className="category_div_p" onClick={(e) => this.props.selectCategoryAndshowModal(e)} style={pStyle}>{this.props.categoryName}</p>
       </Col>
     )
   }

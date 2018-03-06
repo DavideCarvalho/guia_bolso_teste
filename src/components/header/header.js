@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter } from 'react-router';
 import { Menu } from "antd";
 
 const paths = {
@@ -7,7 +8,17 @@ const paths = {
 };
 
 class Header extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      selectedNav = '1';
+    }
+  }
+
   render() {
+    console.log(this.props.location);
     const selectedNav = [paths[window.location.pathname]];
     return (
       <Header>
@@ -26,4 +37,4 @@ class Header extends Component {
   }
 }
 
-export default Header;
+export default withRouter(Header);
