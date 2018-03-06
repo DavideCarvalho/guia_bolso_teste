@@ -6,6 +6,9 @@ const colStyle = {
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center'
+  fontWeight: 'bolder'
+  color: '#001529'
+  textDecoration: underline
 }
 
 const pStyle = {
