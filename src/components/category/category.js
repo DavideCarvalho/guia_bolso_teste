@@ -8,7 +8,7 @@ const colStyle = {
   alignItems: 'center',
   fontWeight: 'bolder',
   color: '#001529',
-  textDecoration: underline
+  textDecoration: 'underline'
 }
 
 const pStyle = {
