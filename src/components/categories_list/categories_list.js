@@ -96,6 +96,7 @@ export default class CategoriesList extends Component<
   render() {
     return (
       <Row gutter={16}>
+      <h1>Escolha uma categoria e lhe daremos uma piada!</h1>
         {this.props.jokes.categories.map((categoryName, index) => (
           <Category
             key={index}

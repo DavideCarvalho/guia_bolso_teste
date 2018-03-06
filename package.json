@@ -28,9 +28,16 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "babel-eslint": "6.1.2",
     "babel-plugin-import": "^1.6.5",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "eslint": "3.5.0",
+    "eslint-config-react-app": "0.2.1",
+    "eslint-plugin-flowtype": "2.18.1",
+    "eslint-plugin-import": "1.12.0",
+    "eslint-plugin-jsx-a11y": "2.2.2",
+    "eslint-plugin-react": "6.3.0",
     "flow-bin": "^0.66.0",
     "react-app-rewired": "^1.4.1",
     "redux-devtools-extension": "^2.13.2"

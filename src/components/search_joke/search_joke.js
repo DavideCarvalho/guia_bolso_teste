@@ -1,6 +1,6 @@
 // @flow
 import React, { PureComponent } from "react";
-import { Input, Row, Col } from "antd";
+import { Input, Row, Col, Avatar  } from "antd";
 import swal from 'sweetalert2';
 import { Loader } from 'react-overlay-loader';
 import 'react-overlay-loader/styles.css';
@@ -29,7 +29,6 @@ type SearchJokeType = {
 
 const colStyle = {
   height: '200px',
-  border: '1px solid black',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center'
@@ -65,18 +64,50 @@ export default class SearchJoke extends PureComponent<CategoriesListPropsType, S
     }
   }
 
+  async submitSearch(input: string) {
+    try {
+      this.setState({
+        isLoading: true
+      })
+      await this.props.searchJoke(input);
+    } catch (e) {
+      swal({
+        type: 'error',
+        title: 'Oops...',
+        text: 'Não foi possível buscar pelas categorias de piadas'
+      });
+    }
+    finally {
+      this.setState({
+        isLoading: false
+      })
+    }
+  }
+
   render() {
     return (
       <Row gutter={16}>
         <h1>Procurar Piada</h1>
         <h2>Escreva o texto da piada e tentaremos acha-la para você</h2>
         <form onSubmit={(e) => this.submitForm(e, this.props.jokes.searchJokeInput)}>
-          <Search value={this.props.jokes.searchJokeInput} placeholder="input search text" enterButton="Search" size="large" onChange={(e) => this.props.inputSearchJoke(e.target.value)} />
+          <Search onSearch={(e) => this.submitSearch(this.props.jokes.searchJokeInput)} value={this.props.jokes.searchJokeInput} placeholder="input search text" enterButton="Search" size="large" onChange={(e) => this.props.inputSearchJoke(e.target.value)} />
         </form>
         {this.props.jokes.jokesSearched.map((joke, index) => {
           return (
-            <Col span={6} key={joke.id} style={colStyle}>
-              <p className="category_div_p">{joke.value}</p>
+            <Col lg={8} sm={24} key={joke.id} style={colStyle}>
+              <Row>
+              <Col span={4}>
+                <Avatar src={joke.icon_url} />
+              </Col>
+              <Col span={2}>
+              </Col>
+              <Col span={12}>
+                <h2>{joke.category ? joke.category[0] : 'Piada'}</h2>
+              </Col>
+              <Col span={24}>
+                <p className="category_div_p">{joke.value}</p>
+              </Col>
+              </Row>
             </Col>
           )
         })}

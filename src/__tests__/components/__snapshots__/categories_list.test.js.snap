@@ -29,9 +29,12 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "host",
+    "nodeType": "class",
     "props": Object {
       "children": Array [
+        <h1>
+          Escolha uma categoria e lhe daremos uma piada!
+</h1>,
         Array [],
         <Modal
           confirmLoading={false}
@@ -52,9 +55,21 @@ ShallowWrapper {
           loading={true}
 />,
       ],
+      "gutter": 16,
     },
     "ref": null,
     "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Escolha uma categoria e lhe daremos uma piada!",
+        },
+        "ref": null,
+        "rendered": "Escolha uma categoria e lhe daremos uma piada!",
+        "type": "h1",
+      },
       Object {
         "instance": null,
         "key": undefined,
@@ -99,15 +114,18 @@ ShallowWrapper {
         "type": [Function],
       },
     ],
-    "type": "div",
+    "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "host",
+      "nodeType": "class",
       "props": Object {
         "children": Array [
+          <h1>
+            Escolha uma categoria e lhe daremos uma piada!
+</h1>,
           Array [],
           <Modal
             confirmLoading={false}
@@ -128,9 +146,21 @@ ShallowWrapper {
             loading={true}
 />,
         ],
+        "gutter": 16,
       },
       "ref": null,
       "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Escolha uma categoria e lhe daremos uma piada!",
+          },
+          "ref": null,
+          "rendered": "Escolha uma categoria e lhe daremos uma piada!",
+          "type": "h1",
+        },
         Object {
           "instance": null,
           "key": undefined,
@@ -175,7 +205,7 @@ ShallowWrapper {
           "type": [Function],
         },
       ],
-      "type": "div",
+      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {

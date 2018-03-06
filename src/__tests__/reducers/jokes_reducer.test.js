@@ -9,6 +9,20 @@ const selectedJokeMock = {
     "If tapped, a Chuck Norris roundhouse kick could power the country of Australia for 44 minutes."
 };
 
+const searchJokesMock = {
+  total: 1,
+  result: [
+    {
+      category: "science",
+      icon_url: "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
+      id: "zfgekm2usfyfra7m5x0wta",
+      url: "https://api.chucknorris.io/jokes/zfgekm2usfyfra7m5x0wta",
+      value:
+        "If tapped, a Chuck Norris roundhouse kick could power the country of Australia for 44 minutes."
+    }
+  ]
+}
+
 describe("jokes_reducer tests", () => {
   it("should bring default state", () => {
     expect(jokesReducer(undefined, {})).toMatchSnapshot();
@@ -47,5 +61,22 @@ describe("jokes_reducer tests", () => {
       payload: selectedJokeMock
     });
     expect(selectedJoke).toMatchSnapshot();
+  });
+  it("should add selectedJoke to the state", () => {
+    const toBeState = [
+      {
+        category: "science",
+        icon_url: "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
+        id: "zfgekm2usfyfra7m5x0wta",
+        url: "https://api.chucknorris.io/jokes/zfgekm2usfyfra7m5x0wta",
+        value:
+          "If tapped, a Chuck Norris roundhouse kick could power the country of Australia for 44 minutes."
+      }
+    ]
+    const { searchedJokes } = jokesReducer(undefined, {
+      type: "SELECT_JOKE_CATEGORY",
+      payload: searchJokesResult
+    });
+    expect(selectedJoke).toBe(toBeState)
   });
 });
