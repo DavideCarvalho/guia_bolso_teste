@@ -1,4 +1,4 @@
-#Chuck norris
+# Chuck norris
 > Projeto feito utilizando a api do Chuck Norris para fazer você querer morrer de rir (ou apenas querer morrer mesmo)
 
 Para ver o projeto, entre [aqui](https://norrischuck.herokuapp.com/)
@@ -12,4 +12,7 @@ Para iniciar o projeto:
 
 o projeto subirá na porta 3000.
 
-Projeto foi bootstrapeado com [Create React App](https://github.com/facebookincubator/create-react-app). Utilizei nesse projeto o [Ant Design](https://ant.design/) para componentes e [Flow](https://flow.org/) pra me ajudar com autocomplete e type checking (já vem com ```create-react-app```)
+Projeto foi bootstrapeado com [Create React App](https://github.com/facebookincubator/create-react-app). Utilizei nesse projeto o [Ant Design](https://ant.design/) para componentes e [Flow](https://flow.org/) pra me ajudar com autocomplete e type checking (já vem com ```create-react-app```).
+O projeto é um PWA, ou seja, colocando na tela inicial do seu celular, você tem uma experiência de como se fosse um aplicativo móvel, então, não exite em testar!
+
+Feedbacks são muito bem vindos!
