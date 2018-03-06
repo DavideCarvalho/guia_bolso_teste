@@ -1,8 +1,10 @@
 #Chuck norris
 > Projeto feito utilizando a api do Chuck Norris para fazer você querer morrer de rir (ou apenas querer morrer mesmo)
 
+Para ver o projeto, entre [aqui](https://norrischuck.herokuapp.com/)
+
 O projeto foi feito em React, pegando dados da api do Chuck Norris.
-Para initiar o projeto:
+Para iniciar o projeto:
 1. baixe esse repo
 2. De ```npm install``` ou ```yarn``` caso tenha o yarn instalado.
 3. Depois use ```yarn run start``` ou ```npm start```

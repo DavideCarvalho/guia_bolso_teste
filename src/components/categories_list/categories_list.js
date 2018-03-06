@@ -64,8 +64,12 @@ export default class CategoriesList extends Component<
         isLoadableActive: true
       });
       await this.props.selectJokeCategory(e.currentTarget.textContent);
-      this.setState({
-        visible: true
+      // this.setState({
+      //   visible: true
+      // });
+      Modal.success({
+        title: `Chuck Norris ${this.props.jokes.selectedJoke.category} joke`,
+        content: this.props.jokes.selectedJoke.value,
       });
     } catch (e) {
       swal({
@@ -104,14 +108,6 @@ export default class CategoriesList extends Component<
             selectCategoryAndshowModal={e => this.selectCategoryAndshowModal(e)}
           />
         ))}
-        <Modal
-          title={`Chuck Norris ${this.props.jokes.selectedJoke.category} jokes`}
-          visible={this.state.visible}
-          onOk={e => this.handleOk(e)}
-          onCancel={e => this.handleCancel(e)}
-        >
-          <p>{this.props.jokes.selectedJoke.value}</p>
-        </Modal>
         <Loader fullPage loading={this.state.isLoadableActive} />
       </Row>
     );
